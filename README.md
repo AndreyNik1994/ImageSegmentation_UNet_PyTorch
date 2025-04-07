@@ -58,6 +58,8 @@ cd ImageSegmentation_UNet_PyTorch
 - Поддерживаемые форматы: PNG, TIFF, JPEG.
 - Маски должны быть в формате RGB, где каждый цвет соответствует определённому классу (см. `params.py`).
 - Цвет масок должен быть записан в соответствующий класс в 'params.py'
+- ВАЖНО: Изображения должны быть кратны PATCH_SIZE, т.е. при PATCH_SIZE=(512, 512) следует использовать изображения разрешением (1024, 1024), (2048, 2048) и т.д.
+- При изменении PATCH_SIZE необходимо проверить требования к разрешению изображений.
 
 ---
 
@@ -132,3 +134,20 @@ cd ImageSegmentation_UNet_PyTorch
 Email: nikitenoka@gmail.com
 GitHub: https://github.com/AndreyNik1994
 ```
+
+
+
+Примеры моделей, работспособность которых проверялась:
+PATCH_SIZE = (512, 512)
+VAL_SPLIT = 0.15 
+BATCH_SIZE = 4
+N_REPEATS = 16
+ENCODER_CHANNELS = [16, 32, 64, 128, 256, 512]
+IN_CHANNELS = 1 (и 3)
+OUT_CLASSES = 4
+NUM_EPOCHS = 100-1000 (~ после 250 плато)
+LEARNING_RATE = 1e-4 или 1е-5
+
+Время обучения NVIDIA 3060 12GB ~
+
+
