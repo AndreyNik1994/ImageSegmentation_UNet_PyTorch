@@ -74,13 +74,6 @@ cd ImageSegmentation_UNet_PyTorch
    ```bash
    python main_backup.py
    ```
-
-3. **Мониторинг обучения**  
-   Используйте TensorBoard для просмотра логов:
-   ```bash
-   tensorboard --logdir=runs/
-   ```
-
 ---
 
 ## Структура проекта
